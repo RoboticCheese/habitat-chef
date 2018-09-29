@@ -36,6 +36,7 @@ action :install do
     user 'hab' do
       gid 'hab'
       system true
+      manage_home true
     end
   end
 

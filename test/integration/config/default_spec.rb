@@ -1,5 +1,17 @@
 describe user('hab') do
   it { should exist }
+  its('home') { should eq('/home/hab') }
+  its('groups') { should eq(%w(hab)) }
+end
+
+describe group('hab') do
+  it { should exist }
+end
+
+describe directory('/home/hab') do
+  it { should exist }
+  its('owner') { should eq('hab') }
+  its('group') { should eq('hab') }
 end
 
 describe file('/bin/hab') do
